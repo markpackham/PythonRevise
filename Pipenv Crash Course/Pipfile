@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+nose = "*"
+
+[packages]
+psycopg2 = "==2.7.5"
+psycopg2-binary = "==2.7.5"
+pytz = "==2018.5"
+Django = "==2.1.2"
+Pillow = "==5.2.0"
+camelcase = "*"
+
+[requires]
+python_version = "3.7"
