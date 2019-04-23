@@ -39,6 +39,12 @@ lower()
 upper()
 str()
 
+#.join()
+#Join all items in a tuple into a string, using a hash character as separator:
+myTuple = ("John", "Peter", "Vicky")
+x = "#".join(myTuple)
+print(x)
+
 parrot = "Norwegian Blue"
 print len(parrot)
 parrot = "Norwegian Blue"
@@ -348,3 +354,51 @@ for letter in word:
   # Only print out the letter i
   if letter == "i":
     print letter
+
+
+#range() function is just a shortcut for generating a list, so you can use ranges in all the same places you can use lists.
+range(6) # => [0, 1, 2, 3, 4, 5]
+range(1, 6) # => [1, 2, 3, 4, 5]
+range(1, 6, 3) # => [1, 4]
+The range function has three different versions:
+range(stop)
+range(start, stop)
+range(start, stop, step)
+In all cases, the range() function returns a list of numbers from start up to (but not including) stop. Each item increases by step.
+If omitted, start defaults to 0 and step defaults to 1.
+
+#range iteration example
+n = [3, 5, 7]
+def total(numbers):
+  result = 0
+  for i in range(0,len(numbers)):
+    result += numbers[i]
+  return result
+
+#join 2 lists
+m = [1, 2, 3]
+n = [4, 5, 6]
+def join_lists(x, y):
+	return x + y
+print join_lists(m, n)
+# You want this to print [1, 2, 3, 4, 5, 6]
+
+
+#multi dimensional list
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+def flatten(lists):
+  results = []
+  for numbers in lists:
+    for number in numbers:
+      results.append(number)
+  return results
+print flatten(n)
+
+
+#While loop
+count = 0
+if count < 5:
+  print "Hello, I am an if statement and count is", count
+while count < 10:
+  print "Hello, I am a while and count is", count
+  count += 1
