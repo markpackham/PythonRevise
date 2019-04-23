@@ -402,3 +402,131 @@ if count < 5:
 while count < 10:
   print "Hello, I am a while and count is", count
   count += 1
+
+
+#Break
+count = 0
+while True:
+  print count
+  count += 1
+  if count >= 10:
+    break
+
+#random (random numbers) & break
+import random
+print "Lucky Numbers! 3 numbers will be generated."
+print "If one of them is a '5', you lose!"
+count = 0
+while count < 3:
+  num = random.randint(1, 6)
+  print num
+  if num == 5:
+    print "Sorry, you lose!"
+    break
+  count += 1
+else:
+  print "You win!"
+
+
+#For In Range
+print "Counting..."
+for i in range(20):
+  print i
+
+
+#Modulous % / is even
+def is_even(x):
+  if x % 2 == 0:
+    return True
+  else:
+    return False
+print is_even(5)
+print is_even(6)
+
+
+#Prime number check example
+def is_prime(x):
+    if x < 2:
+        return False
+    else:
+        for n in range(2, x-1):
+            if x % n == 0:
+                return False
+        return True
+print is_prime(13)
+print is_prime(10)
+
+
+#factorial
+#factorial(4) would equal 4 * 3 * 2 * 1, which is 24.
+def factorial(x):
+    total = 1
+    while x>0:
+        total *= x
+        x-=1
+    return total
+
+
+#reverse
+def reverse(text):
+    word = ""
+    l = len(text) - 1
+    while l >= 0:
+        word = word + text[l]
+        l -= 1
+    return word
+print reverse("Hello World")
+
+
+#anti vowel
+def anti_vowel(text):
+    result = ""
+    vowels = "ieaouIEAOU"
+    for char in text:
+          if char not in vowels:
+            result += char
+    return result
+print anti_vowel("hello book")
+
+
+#remove duplicates
+def remove_duplicates(inputlist):
+    if inputlist == []:
+        return []
+    # Sort the input list from low to high    
+    inputlist = sorted(inputlist)
+    # Initialize the output list, and give it the first value of the now-sorted input list
+    outputlist = [inputlist[0]]
+    # Go through the values of the sorted list and append to the output list
+    # ...any values that are greater than the last value of the output list
+    for i in inputlist:
+        if i > outputlist[-1]:
+            outputlist.append(i)
+    return outputlist
+print remove_duplicates([1, 1, 2, 2])
+
+
+#median
+def median(lst):
+    sorted_list = sorted(lst)
+    if len(sorted_list) % 2 != 0:
+        #odd number of elements
+        index = len(sorted_list)//2 
+        return sorted_list[index]
+    elif len(sorted_list) % 2 == 0:
+        #even no. of elements
+        index_1 = len(sorted_list)/2 - 1
+        index_2 = len(sorted_list)/2
+        mean = (sorted_list[index_1] + sorted_list[index_2])/2.0
+        return mean
+print median([2, 4, 5, 9])
+
+
+#.items() method is used to return the list with all dictionary keys with values.
+my_dict = {
+  'name': 'Nick',
+  'age':  31,
+  'occupation': 'Dentist',
+}
+print my_dict.items()
+#[('age', 31), ('name', 'Nick'), ('occupation', 'Dentist')]
