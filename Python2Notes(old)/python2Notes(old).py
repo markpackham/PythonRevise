@@ -265,6 +265,16 @@ first = suitcase[0:2]
 middle = suitcase[2:4]
 # The last two items (index four and five)
 last = suitcase[4:6]
+#The default starting index is 0.
+#The default ending index is the end of the list.
+#The default stride is 1.
+my_list = range(1, 11) # List of numbers 1 - 10
+print my_list[::2]
+#gives [1, 3, 5, 7, 9]
+#Reverse List uses a negative stride
+letters = ['A', 'B', 'C', 'D', 'E']
+print letters[::-1]
+#['E', 'D', 'C', 'B', 'A']
 
 #Remove items from List .remove()
 backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
@@ -523,6 +533,7 @@ print median([2, 4, 5, 9])
 
 
 #.items() method is used to return the list with all dictionary keys with values.
+#.items() returns an array of tuples, a tuple is an unchangeable list
 my_dict = {
   'name': 'Nick',
   'age':  31,
@@ -530,3 +541,37 @@ my_dict = {
 }
 print my_dict.items()
 #[('age', 31), ('name', 'Nick'), ('occupation', 'Dentist')]
+
+
+#Dictionary keys & values
+my_dict = {
+  'name': 'Nick',
+  'age':  31,
+  'occupation': 'Dentist',
+}
+print my_dict.keys()
+print my_dict.values()
+
+#Dictionary Loop In
+my_dict = {
+  'name': 'Nick',
+  'age':  31,
+  'occupation': 'Dentist',
+}
+for key in my_dict:
+  print key, my_dict[key]
+
+#lambda creates is an anonymous function
+lambda x: x % 3 == 0
+#Is the same as
+def by_three(x):
+  return x % 3 == 0
+#If you plan on creating a function you’ll use over and over, you’re better off using def and giving that function a name
+
+#Bitwise operations are operations that directly manipulate bits
+print 5 >> 4  # Right Shift
+print 5 << 1  # Left Shift
+print 8 & 5   # Bitwise AND
+print 9 | 4   # Bitwise OR
+print 12 ^ 42 # Bitwise XOR
+print ~88     # Bitwise NOT
