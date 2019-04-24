@@ -575,3 +575,141 @@ print 8 & 5   # Bitwise AND
 print 9 | 4   # Bitwise OR
 print 12 ^ 42 # Bitwise XOR
 print ~88     # Bitwise NOT
+
+
+# bin() convert number to binary
+print bin(1)
+print bin(2)
+print bin(3)
+print bin(4)
+print bin(5)
+"""
+0b1
+0b10
+0b11
+0b100
+0b101
+"""
+
+# int() function that you’ve seen a bit of already. It can turn non-integer input into an integer
+#int function actually has an optional second parameter.
+int("110", 2)
+#gives 6
+#When given a string containing a number and the base that number is in, the function will return the value of that number converted to base ten.
+
+#Class example
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  health = "good"
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print self.name
+    print self.age
+hippo = Animal('Anderson', 36)
+sloth = Animal('Dale', 15)
+ocelot = Animal('Fuzzy', 7)
+print hippo.health
+print sloth.health
+print ocelot.health
+
+
+#Inheritance (Triangle steals abilities of Shape)
+class Shape(object):
+  """Makes shapes!"""
+  #__init__() as the method that “boots up” a class’ instance object: the init bit is short for “initialize.” (a constructor)
+  def __init__(self, number_of_sides):
+    #refer to the instance object called "self" , self is "this"
+    #unlike "this" in other languages you have to include self explicitly as first parameter to an instance method in Python
+    self.number_of_sides = number_of_sides
+class Triangle(Shape):
+  def __init__(self, side1, side2, side3):
+    self.side1 = side1
+    self.side2 = side2
+    self.side3 = side3
+
+#Override class one is inheriting from
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+class PartTimeEmployee(Employee):
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 12.00
+
+#Class Example
+class Car(object):
+  condition = "new"
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+  def display_car(self):
+    print "This is a %s %s with %s MPG." % (self.color, self.model, str(self.mpg))    
+  def drive_car(self):
+    self.condition = "used"   
+class ElectricCar(Car):
+  def __init__(self, model, color, mpg, battery_type):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+    self.battery_type = battery_type
+    
+  def drive_car(self):
+    self.condition = "like new"
+my_car = ElectricCar("DeLorean", "silver", 88, "molten salt")
+print my_car.condition
+my_car.drive_car()
+print my_car.condition
+
+
+#open() file with read & write
+my_file = open("output.txt", "r+")
+#write-only mode ("w")
+#read-only mode ("r")
+#read and write mode ("r+")
+#append mode ("a"), which adds any new data you write to the file to the end of the file.
+
+
+#write file using .write()
+my_list = [i ** 2 for i in range(1, 11)]
+my_file = open("output.txt", "w")
+# Add your code below!
+for value in my_list:
+  my_file.write(str(value) + "\n")
+my_file.close()
+
+#read file via .read()
+my_file = open("output.txt", "r")
+print my_file.read()
+my_file.close()
+
+#read specific line via .readline()
+my_file = open("text.txt", "r")
+print my_file.readline()
+print my_file.readline()
+print my_file.readline()
+my_file.close()
+
+#CLOSE after doing IO, stop wasting memory use .close()
+#If you write to a file without closing, the data won’t make it to the target file.
+
+#with & as
+#use "with" if you're too lazy to bother with .close()
+with open("text.txt", "w") as my_file:
+  my_file.write("My Data!")
+
+#closed - use .closed() to check if a file is closed
+#.closed() says True when the file is closed and False otherwise
+with open("text.txt", "w") as my_file:
+  my_file.write("My Data!")
+if not file.closed:
+  file.close()
+print my_file.closed
