@@ -71,3 +71,17 @@ print("The mean of the test scores in teacher one's class is " + str(np.mean(tea
 print("The mean of the test scores in teacher two's class is " + str(np.mean(teacher_two_grades)))
 print("The variance of the test scores in teacher one's class is " +str(teacher_one_variance))
 print("The variance of the test scores in teacher two's class is " +str(teacher_two_variance))
+
+
+#std() takes a dataset as a parameter and returns the standard deviation of that dataset
+#a quantity expressing by how much the members of a group differ from the mean value for the group like varience but uses **0.5 squaring
+#By taking the square root of the variance, the standard deviation gives 
+#you a statistic about spread that can be easily interpreted and compared to the mean.
+import numpy as np
+from data import nba_data, okcupid_data
+#Change these variables to be the standard deviation of each dataset. Use NumPy's function!
+nba_standard_deviation = np.std(nba_data)
+okcupid_standard_deviation = np.std(okcupid_data)
+#IGNORE CODE BELOW HERE
+print("The standard deviation of the NBA dataset is " +str(nba_standard_deviation))
+print("The standard deviation of the OkCupid dataset is " + str(okcupid_standard_deviation))
