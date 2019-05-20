@@ -94,3 +94,28 @@ plt.ylabel("Count")
 plt.show()
 
 # Histogram is calculated via NumPy or plotted with Matplotlib.
+
+# Skew
+'''Once you have the center and range of your data, you can begin to describe its shape. 
+The skew of a dataset is a description of the data’s symmetry.
+A dataset with one prominent peak, and similar tails to the left and right is called symmetric. 
+The median and mean of a symmetric dataset are similar.
+
+A histogram with one prominent peak to the right, and a tail that extends to the left is called a left-skewed dataset.
+'''
+
+# modality describes the number of peaks in a dataset. 
+# datasets with one distinct peak, known as unimodal. This is the most common.
+# bimodal dataset has two distinct peaks.
+# multimodal dataset has more than two peaks
+# datasets with no obvious clustering. Datasets such as these are called uniform distributions
+
+# Outliers
+# If you see an outlier in your dataset, it’s worth reporting and investigating. 
+# This data can often indicate an error in your data or an interesting insight.
+
+
+# Quartiles
+# A common way to communicate a high-level overview of a dataset is to find the values that split the data into four groups of equal size.
+# By doing this, we can then say whether a new datapoint falls in the first, second, third, or fourth quarter of the data.
+
