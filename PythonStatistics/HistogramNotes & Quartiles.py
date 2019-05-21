@@ -118,4 +118,39 @@ A histogram with one prominent peak to the right, and a tail that extends to the
 # Quartiles
 # A common way to communicate a high-level overview of a dataset is to find the values that split the data into four groups of equal size.
 # By doing this, we can then say whether a new datapoint falls in the first, second, third, or fourth quarter of the data.
+# quantile() function takes two parameters. The first is the dataset you’re interested in. The second is a number between 0 and 1.
+import numpy as np
+dataset = [50, 10, 4, -3, 4, -20, 2]
+#calculates the third quartile of the given dataset
+third_quartile = np.quantile(dataset, 0.75)
 
+
+
+from song_data import songs
+import numpy as np
+#Create the variables songs_q1, songs_q2, and songs_q3 here:
+songs_q1 = np.quantile(songs,0.25)
+songs_q2 = np.quantile(songs,0.50)
+songs_q3 = np.quantile(songs,0.75)
+favorite_song = 120
+quarter = 1
+#Ignore the code below here:
+try:
+  print("The first quartile of dataset one is " + str(songs_q1) + " seconds")
+except NameError:
+  print("You haven't defined songs_q1")
+try:
+  print("The second quartile of dataset one is " + str(songs_q2)+ " seconds")
+except NameError:
+  print("You haven't defined songs_q2")
+try:
+  print("The third quartile of dataset one is " + str(songs_q3)+ " seconds")
+except NameError:
+  print("You haven't defined songs_q3\n")
+
+'''
+Buisnesses might compare their revenue to other companies by looking at quartiles (where I heard of the word before).
+In fact quartiles are so commonly used that the three quartiles, along with the minimum and the maximum values of 
+a dataset, are called the five-number summary of the dataset. 
+These five numbers help you quickly get a sense of the range, centrality, and spread of the dataset.
+'''
