@@ -154,3 +154,26 @@ In fact quartiles are so commonly used that the three quartiles, along with the 
 a dataset, are called the five-number summary of the dataset. 
 These five numbers help you quickly get a sense of the range, centrality, and spread of the dataset.
 '''
+
+
+# IQR interquartile range is the difference between the third quartile (Q3) and the first quartile (Q1)
+# iqr() function takes a dataset as a parameter and returns the Interquartile Range. 
+# Notice that when we imported iqr(), we imported it from the stats submodule
+# IQR is that it is a statistic, like the range, that helps describe the spread of the center of the data.
+# unlike the range, the IQR is robust. A statistic is robust when outliers have little impact on it. 
+from scipy.stats import iqr
+dataset = [4, 10, 38, 85, 193]
+interquartile_range = iqr(dataset)
+
+
+from song_data import songs
+from scipy.stats import iqr
+#Create the variables interquartile_range here:
+interquartile_range = iqr(songs)
+# Ignore the code below here
+try:
+  print("The IQR of the dataset is " + str(interquartile_range) + "\n")
+except NameError:
+  print("You haven't defined interquartile_range yet\n")
+
+
